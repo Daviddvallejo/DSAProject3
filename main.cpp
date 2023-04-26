@@ -4,6 +4,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <vector>
+#include <queue>
 #include <cmath>
 #include <ctime>
 using namespace std;
@@ -160,6 +161,46 @@ int main(){
 
 
     // Graph (Adjacency List) setup
+    /*
+     * Read in data values and when current price is reached, store the value that is timeframe away from it in an
+     * adjacency list, values that are timeframe away will be grouped into number of percent change ranges of (+/-)0.25%
+     * they are away from current stock price ($303 is 2 ranges away from the current price of $300)
+     * and weights will be number of times that percent change was reached.
+     */
+
+    // Create graph to store data
+    unordered_map<int, vector<pair<double, int>>> myGraph;
+
+    // Create queue to store how many days away we are from the next day that is timeframe away from a day that had
+    // current stock price
+    queue<int> q;
+
+    // Open file
+    inFS.open(file);
+
+    day = 0;
+    val = 0;
+    token = "";
+
+    // Read lines in file, separate lines into usable values, and add to graph
+    while (inFS) {
+        inFS.clear();
+
+        getline(inFS, token, ',');
+        if (token.empty()) {break;}
+
+        day = stoi(token);
+        getline(inFS, token);
+        val = stoi(token);
+
+        // Add this value to the graph as it is timeframe away from a day we were at the input stock price
+        if (q.front() == 0) {
+            // Calculate percent change and then how many ranges away it is from input stock price
+        }
+
+
+    }
+
 
 
 
