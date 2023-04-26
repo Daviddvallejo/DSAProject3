@@ -20,8 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Wrote: &#10;     inputting all read values into the map&#10;     search for values timeframe away from input value and calculated the average and percent change&#10;     output line">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Changed search alg. in map from linear to binary">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/250.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/500.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +65,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/C++/COP3503/Project2_ImageProcessing",
+    "last_opened_file_path": "C:/C++/COP3503/Lab4Part2_FileIO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682463332277</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed search alg. in map from linear to binary">
+      <created>1682520443265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682520443265</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +151,7 @@
     <MESSAGE value="Starting point" />
     <MESSAGE value="Added main()" />
     <MESSAGE value="Wrote: &#10;     inputting all read values into the map&#10;     search for values timeframe away from input value and calculated the average and percent change&#10;     output line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote: &#10;     inputting all read values into the map&#10;     search for values timeframe away from input value and calculated the average and percent change&#10;     output line" />
+    <MESSAGE value="Changed search alg. in map from linear to binary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed search alg. in map from linear to binary" />
   </component>
 </project>

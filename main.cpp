@@ -1,9 +1,11 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
 #include <unordered_map>
 #include <vector>
 #include <cmath>
+#include <ctime>
 using namespace std;
 
 int main(){
@@ -19,8 +21,9 @@ int main(){
     string file = "100.csv";
 
 
+    // Start clock to time map approach
+    clock_t startTime = clock();
 
-    // FIXME: START CLOCK FOR MAP HERE
     // Map setup
     /*
      * Create map and store:
@@ -50,9 +53,12 @@ int main(){
 
         // Read line and separate values into usable variables
         getline(inFS, token, ',');
+        if (token.empty()) {break;}
         day = stoi(token);
         getline(inFS, token);
         val = stoi(token);
+
+
 
         // Insert values into map
         if (val < lowerBound) {
@@ -136,10 +142,20 @@ int main(){
     double confidence = 0;
 
     // Output results to screen
-    cout << "The stock will change by " << percentChange << " in " << timeFrame << " trading days with a ";
+    cout << fixed << showpoint << setprecision(2);
+    string changeString = (percentChange >= 0) ? "go up " : "go down ";
+
+    cout << "The stock will " << changeString;
+    cout << abs(percentChange) << "% in ";
+    cout << timeFrame << " trading days with a ";
     cout << confidence << "% certainty" << endl;
 
-    // FIXME: END CLOCK FOR MAP HERE
+    // End clock and save time elapsed for map process
+    clock_t endTime = clock();
+    clock_t timeElapsed = endTime - startTime;
+    auto mapTime = static_cast<float>(timeElapsed)/CLOCKS_PER_SEC;
+
+    cout << "The map approach finished in " << mapTime << " seconds." << endl;
 
 
 
