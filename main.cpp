@@ -71,39 +71,58 @@ int main(){
     // If/when a match is found, update average price.
     // Keep track of num times price went up, down, or stayed the same and also number of times a day timeframe away was looked for.
 
-
-    // FIXME: CHANGE INNER FOR-LOOPS TO BINARY SEARCHES FOR DAYS TIMEFRAME AWAY
     double totalSum = 0;
     int matchedDays = 0;
     for (auto i : myMap["At"]) {
-        for (auto x : myMap["Down"]) {
-            if (x.first - i.first == timeFrame) {
-                totalSum += x.second;
+
+        int targetDay = i.first + timeFrame;
+        int mid;
+
+        // Look for match in "Down" (Binary search)
+        int left = 0;
+        int right = myMap["Down"].size() - 1;
+        while (left <= right) {
+            mid = left + ((right - left) / 2);
+            if (myMap["Down"][mid].first == targetDay) {
+                totalSum += myMap["Down"][mid].second;
                 matchedDays++;
                 break;
-            }
-            if (x.first - i.first > timeFrame) {
-                break;
+            } else if (myMap["Down"][mid].first < targetDay) {
+                left = mid + 1;
+            } else if (myMap["Down"][mid].first > targetDay) {
+                right = mid - 1;
             }
         }
-        for (auto y : myMap["At"]){
-            if (y.first - i.first == timeFrame) {
-                totalSum += y.second;
+
+        // Look for match in "At" (Binary search)
+        left = 0;
+        right = myMap["At"].size() - 1;
+        while (left <= right) {
+            mid = left + ((right - left) / 2);
+            if (myMap["At"][mid].first == targetDay) {
+                totalSum += myMap["At"][mid].second;
                 matchedDays++;
                 break;
-            }
-            if (y.first - i.first > timeFrame) {
-                break;
+            } else if (myMap["At"][mid].first < targetDay) {
+                left = mid + 1;
+            } else if (myMap["At"][mid].first > targetDay) {
+                right = mid - 1;
             }
         }
-        for (auto z : myMap["Up"]) {
-            if (z.first - i.first == timeFrame) {
-                totalSum += z.second;
+
+        // Look for match in "Up" (Binary search)
+        left = 0;
+        right = myMap["Up"].size() - 1;
+        while (left <= right) {
+            mid = left + ((right - left) / 2);
+            if (myMap["Up"][mid].first == targetDay) {
+                totalSum += myMap["Up"][mid].second;
                 matchedDays++;
                 break;
-            }
-            if (z.first - i.first > timeFrame) {
-                break;
+            } else if (myMap["Up"][mid].first < targetDay) {
+                left = mid + 1;
+            } else if (myMap["Up"][mid].first > targetDay) {
+                right = mid - 1;
             }
         }
     }
