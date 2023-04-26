@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Fixed bug with file read (Created escape for while loop once it reaches end of file)&#10;Fixed precision of percent change (set to 2 decimal places)&#10;Improved output message for readability&#10;Added clock timer for map process&#10;Added time elapsed out put for map process">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Began working on graph setup&#10;Opened file and began work to read in values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682524745870</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Began working on graph setup&#10;Opened file and began work to read in values">
+      <created>1682527151714</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682527151714</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +164,7 @@
     <MESSAGE value="Wrote: &#10;     inputting all read values into the map&#10;     search for values timeframe away from input value and calculated the average and percent change&#10;     output line" />
     <MESSAGE value="Changed search alg. in map from linear to binary" />
     <MESSAGE value="Fixed bug with file read (Created escape for while loop once it reaches end of file)&#10;Fixed precision of percent change (set to 2 decimal places)&#10;Improved output message for readability&#10;Added clock timer for map process&#10;Added time elapsed out put for map process" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with file read (Created escape for while loop once it reaches end of file)&#10;Fixed precision of percent change (set to 2 decimal places)&#10;Improved output message for readability&#10;Added clock timer for map process&#10;Added time elapsed out put for map process" />
+    <MESSAGE value="Began working on graph setup&#10;Opened file and began work to read in values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Began working on graph setup&#10;Opened file and began work to read in values" />
   </component>
 </project>

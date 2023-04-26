@@ -137,7 +137,7 @@ int main(){
     // Calculate average for price of stock after timeframe for every instance the stock was at the current price and
     // the percent change
     double avgPrice = totalSum / matchedDays;
-    double percentChange = (avgPrice - stockVal) / stockVal;
+    double percentChange = ((avgPrice - stockVal) / stockVal) * 100;
 
     // FIXME: WRITE FORMULA FOR PERCENT CONFIDENCE
     double confidence = 0;
@@ -181,6 +181,8 @@ int main(){
     day = 0;
     val = 0;
     token = "";
+    percentChange = 0;
+    int range;
 
     // Read lines in file, separate lines into usable values, and add to graph
     while (inFS) {
@@ -196,6 +198,9 @@ int main(){
         // Add this value to the graph as it is timeframe away from a day we were at the input stock price
         if (q.front() == 0) {
             // Calculate percent change and then how many ranges away it is from input stock price
+            percentChange = (static_cast<double>(val - stockVal) / stockVal) * 100;
+            range = ceil(((percentChange / 0.25) - 1) / 2);
+
         }
 
 
