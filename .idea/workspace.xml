@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Began working on graph setup&#10;Opened file and began work to read in values">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Cleaned up some code in graph process">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -134,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682527151714</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cleaned up some code in graph process">
+      <created>1682533584014</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682533584014</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +172,7 @@
     <MESSAGE value="Changed search alg. in map from linear to binary" />
     <MESSAGE value="Fixed bug with file read (Created escape for while loop once it reaches end of file)&#10;Fixed precision of percent change (set to 2 decimal places)&#10;Improved output message for readability&#10;Added clock timer for map process&#10;Added time elapsed out put for map process" />
     <MESSAGE value="Began working on graph setup&#10;Opened file and began work to read in values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began working on graph setup&#10;Opened file and began work to read in values" />
+    <MESSAGE value="Cleaned up some code in graph process" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some code in graph process" />
   </component>
 </project>

@@ -169,7 +169,7 @@ int main(){
      */
 
     // Create graph to store data
-    unordered_map<int, vector<pair<double, int>>> myGraph;
+    unordered_map<int, vector<pair<int, int>>> myGraph;
 
     // Create queue to store how many days away we are from the next day that is timeframe away from a day that had
     // current stock price
@@ -196,12 +196,28 @@ int main(){
         val = stoi(token);
 
         // Add this value to the graph as it is timeframe away from a day we were at the input stock price
-        if (q.front() == 0) {
+        if (!q.empty() && q.front() == 0) {
+            q.pop();
             // Calculate percent change and then how many ranges away it is from input stock price
             percentChange = (static_cast<double>(val - stockVal) / stockVal) * 100;
             range = ceil(((percentChange / 0.25) - 1) / 2);
+            if (myGraph[stockVal].empty()) {
+                myGraph[stockVal].emplace_back(range, 1);
+            } else {
+                for (auto it = myGraph[stockVal].begin(); it != myGraph[stockVal].end(); it++) {
+                    if (range == it->first) {
+                        it->second++;
+                        break;
+                    } else if (range < it->first && (it == myGraph[stockVal].begin() || range > (it-1)->first)) {
+                        myGraph[stockVal].emplace(it, range, 1);
+                    } else if (it+1 == myGraph[stockVal].end()) {
+                        myGraph[stockVal].emplace_back(range, 1);
+                    }
+                }
+            }
 
         }
+
 
 
     }
