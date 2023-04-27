@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Changed map logic for calculating data inputs to be the same as the logic for the graph setup">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Prevented duplicates from being added into the graph in the graph approach">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -163,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682630933413</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Prevented duplicates from being added into the graph in the graph approach">
+      <created>1682631854624</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682631854624</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +205,7 @@
     <MESSAGE value="Worked on adding data points to graph (sorted)" />
     <MESSAGE value="Changed percentChange calculations in graph section to account for ties in maxWeight;" />
     <MESSAGE value="Changed map logic for calculating data inputs to be the same as the logic for the graph setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed map logic for calculating data inputs to be the same as the logic for the graph setup" />
+    <MESSAGE value="Prevented duplicates from being added into the graph in the graph approach" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prevented duplicates from being added into the graph in the graph approach" />
   </component>
 </project>

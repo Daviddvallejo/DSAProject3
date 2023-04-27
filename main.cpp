@@ -47,9 +47,6 @@ int main(){
     // Open input filestream for map
     inFS.open(file);
 
-    // Bounds are +/- 0.25%
-    int upperBound = ceil(stockVal + (stockVal / 400));
-    int lowerBound = ceil(stockVal - (stockVal / 400));
     int day;
     double val;
     string token;
@@ -69,9 +66,9 @@ int main(){
 
 
         // Insert values into map
-        if (val < lowerBound) {
+        if (range < 0) {
             myMap["Down"].emplace_back(day,range);
-        } else if (val > upperBound) {
+        } else if (range > 0) {
             myMap["Up"].emplace_back(day,range);
         } else {
             myMap["At"].emplace_back(day, range);
@@ -240,11 +237,10 @@ int main(){
                         break;
                         // If range is not found, add at the end
                     } else if (i+1 == myGraph[stockVal].size()) {
-                        myGraph[stockVal].emplace_back(range, 1);
+                        myGraph[stockVal].emplace_back(range, 0);
                     }
                 }
             }
-
         }
 
         // If read in value is equal to input value, add projected day (that is timeframe away) to q
