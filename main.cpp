@@ -186,6 +186,7 @@ int main(){
     token = "";
     percentChange = 0;
     int range, sumWeights = 0;
+    double avgPercentChange = 0;
 
     // Read lines in file, separate lines into usable values, and add to graph
     while (inFS) {
@@ -244,19 +245,12 @@ int main(){
     inFS.close();
 
     // Calculate price movement and confidence
-    //Test
-    int maxWeight, equalWeightCount = 0;
-    double avgPercentChange = 0.0;
-    auto maxPair = myGraph[stockVal].begin();
-    maxWeight = maxPair->second;
-    while(maxPair->second == maxWeight){
-        equalWeightCount++;
-        avgPercentChange += maxPair->first;
-        maxPair++;
+    for(auto& i : myGraph[stockVal]){
+        avgPercentChange += i.first * i.second;
     }
-    avgPercentChange = avgPercentChange / equalWeightCount;
+    avgPercentChange = avgPercentChange / sumWeights;
     percentChange = avgPercentChange / 2.0;
-    confidence = (maxPair->second / double(sumWeights)) * 100;
+    confidence = 0;
     changeString = (percentChange >= 0) ? "go up " : "go down ";
 
     cout << "The stock will " << changeString;
