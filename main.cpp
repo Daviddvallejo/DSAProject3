@@ -185,7 +185,7 @@ int main(){
     val = 0;
     token = "";
     percentChange = 0;
-    int range;
+    int range, sumWeights = 0;
 
     // Read lines in file, separate lines into usable values, and add to graph
     while (inFS) {
@@ -200,6 +200,7 @@ int main(){
 
         // Add this value to the graph as it is timeframe away from a day we were at the input stock price
         if (!q.empty() && q.front() == day) {
+            sumWeights++;
             q.pop();
             // Calculate percent change and then how many ranges away it is from input stock price
             percentChange = (static_cast<double>(val - stockVal) / stockVal) * 100;
@@ -235,15 +236,24 @@ int main(){
         }
 
         // If read in value is equal to input value, add projected day (that is timeframe away) to q
-        if (val == stockVal) {q.emplace(day);}
+        if (val == stockVal) {q.emplace(day + timeFrame);}
 
     }
 
     // Close input filestream for graph
     inFS.close();
 
-    // TODO: DECIDE ON HOW WE WANT TO REPRESENT PRICE MOVEMENT FOR GRAPH
     // Calculate price movement and confidence
+    auto maxPercentChange = myGraph[stockVal].begin();
+    percentChange = maxPercentChange->first / 2.0;
+    confidence = maxPercentChange->second / double(sumWeights);
+    changeString = (percentChange >= 0) ? "go up " : "go down ";
+
+    cout << "The stock will move" << changeString;
+    cout << abs(percentChange) << "% in ";
+    cout << timeFrame << " trading days with a ";
+    cout << confidence << "% certainty" << endl;
+
 
     // End clock and save time elapsed for graph process
     endTime = clock();
