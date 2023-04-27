@@ -20,7 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Test for Files (again)" />
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Worked on adding data points to graph (sorted)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,19 +35,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="f90f3b43-c153-4c9f-b92c-40fe9a308f2f" />
-        <option name="url" value="https://github.com/Daviddvallejo/DSAProject3.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,11 +76,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -101,6 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682456433938</updated>
       <workItem from="1682456435360" duration="391000" />
+      <workItem from="1682621268861" duration="3507000" />
     </task>
     <task id="LOCAL-00001" summary="Starting point">
       <created>1682456505191</created>
@@ -158,21 +144,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682542596908</updated>
     </task>
-    <task id="LOCAL-00009" summary="Test to see if I can add the csv files to github">
-      <created>1682618226162</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1682618226162</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Test for Files (again)">
-      <created>1682618468586</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1682618468586</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,8 +177,6 @@
     <MESSAGE value="Began working on graph setup&#10;Opened file and began work to read in values" />
     <MESSAGE value="Cleaned up some code in graph process" />
     <MESSAGE value="Worked on adding data points to graph (sorted)" />
-    <MESSAGE value="Test to see if I can add the csv files to github" />
-    <MESSAGE value="Test for Files (again)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test for Files (again)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on adding data points to graph (sorted)" />
   </component>
 </project>

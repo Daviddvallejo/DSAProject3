@@ -244,12 +244,21 @@ int main(){
     inFS.close();
 
     // Calculate price movement and confidence
-    auto maxPercentChange = myGraph[stockVal].begin();
-    percentChange = maxPercentChange->first / 2.0;
-    confidence = maxPercentChange->second / double(sumWeights);
+    int maxWeight, equalWeightCount = 0;
+    double avgPercentChange = 0.0;
+    auto maxPair = myGraph[stockVal].begin();
+    maxWeight = maxPair->second;
+    while(maxPair->second == maxWeight){
+        equalWeightCount++;
+        avgPercentChange += maxPair->first;
+        maxPair++;
+    }
+    avgPercentChange = avgPercentChange / equalWeightCount;
+    percentChange = avgPercentChange / 2.0;
+    confidence = (maxPair->second / double(sumWeights)) * 100;
     changeString = (percentChange >= 0) ? "go up " : "go down ";
 
-    cout << "The stock will move" << changeString;
+    cout << "The stock will " << changeString;
     cout << abs(percentChange) << "% in ";
     cout << timeFrame << " trading days with a ";
     cout << confidence << "% certainty" << endl;
