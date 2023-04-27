@@ -20,9 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Cleaned up some code in graph process">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Worked on adding data points to graph (sorted)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682533584014</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Worked on adding data points to graph (sorted)">
+      <created>1682542596908</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682542596908</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +179,7 @@
     <MESSAGE value="Fixed bug with file read (Created escape for while loop once it reaches end of file)&#10;Fixed precision of percent change (set to 2 decimal places)&#10;Improved output message for readability&#10;Added clock timer for map process&#10;Added time elapsed out put for map process" />
     <MESSAGE value="Began working on graph setup&#10;Opened file and began work to read in values" />
     <MESSAGE value="Cleaned up some code in graph process" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some code in graph process" />
+    <MESSAGE value="Worked on adding data points to graph (sorted)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on adding data points to graph (sorted)" />
   </component>
 </project>
