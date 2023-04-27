@@ -150,7 +150,20 @@ int main(){
     double percentChange = avgRange / 2;
 
     // FIXME: WRITE FORMULA FOR PERCENT CONFIDENCE
-    double confidence = 0;
+    double maxWeight = 0;
+    double maxRange = 0;
+    int numMaxRange = 0;
+    for (auto x : priceMap) {maxWeight = (maxWeight < x.second) ? x.second : maxWeight;}
+    for (auto y : priceMap) {
+        if (y.second == maxWeight) {
+            maxRange += y.first;
+            numMaxRange++;
+        }
+    }
+    double avgTempRange = maxRange / numMaxRange;
+    double tempRange = avgTempRange / 2;
+
+    double confidence = 1 - ((abs(percentChange) - abs(tempRange)) / abs(tempRange));
 
     // Output results to screen
     cout << fixed << showpoint << setprecision(2);
@@ -255,6 +268,8 @@ int main(){
     for(auto& i : myGraph[stockVal]){
         avgPercentChange += i.first * i.second;
     }
+
+    // Display price movement, confidence, and elapsed time for graph setup
     avgPercentChange = avgPercentChange / sumWeights;
     percentChange = avgPercentChange / 2.0;
     confidence = 0;
@@ -271,7 +286,9 @@ int main(){
     timeElapsed = endTime - startTime;
     auto graphTime = static_cast<float>(timeElapsed)/CLOCKS_PER_SEC;
 
-    // Display price movement, confidence, and elapsed time for graph setup
+    cout << "The graph approach finished in " << graphTime << " seconds." << endl;
+
+
     // Compare map runtime to graph runtime and display results with respect to the graph time
     float runTimePercentChange = (graphTime - mapTime) / graphTime;
 
