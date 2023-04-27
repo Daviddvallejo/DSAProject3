@@ -275,6 +275,21 @@ int main(){
     confidence = 0;
     changeString = (percentChange >= 0) ? "go up " : "go down ";
 
+    maxWeight = 0;
+    maxRange = 0;
+    numMaxRange = 0;
+    for (auto x : myGraph[stockVal]) {maxWeight = (maxWeight < x.second) ? x.second : maxWeight;}
+    for (auto y : myGraph[stockVal]) {
+        if (y.second == maxWeight) {
+            maxRange += y.first;
+            numMaxRange++;
+        }
+    }
+    avgTempRange = maxRange / numMaxRange;
+    tempRange = avgTempRange / 2;
+
+    confidence = 1 - ((abs(percentChange) - abs(tempRange)) / abs(tempRange));
+
     cout << "The stock will " << changeString;
     cout << abs(percentChange) << "% in ";
     cout << timeFrame << " trading days with a ";
