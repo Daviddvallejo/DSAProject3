@@ -149,7 +149,7 @@ int main(){
 
     double percentChange = avgRange / 2;
 
-    // FIXME: WRITE FORMULA FOR PERCENT CONFIDENCE
+    // Formula for percent confidence
     double maxWeight = 0;
     double maxRange = 0;
     int numMaxRange = 0;
