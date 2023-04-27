@@ -237,6 +237,7 @@ int main(){
                             myGraph[stockVal][0] = myGraph[stockVal][1];
                             myGraph[stockVal][1] = temp;
                         }
+                        break;
                         // If range is not found, add at the end
                     } else if (i+1 == myGraph[stockVal].size()) {
                         myGraph[stockVal].emplace_back(range, 1);
