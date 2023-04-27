@@ -20,7 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Test to see if I can add the csv files to github" />
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Test for Files (again)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682618226162</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test for Files (again)">
+      <created>1682618468586</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682618468586</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +209,7 @@
     <MESSAGE value="Cleaned up some code in graph process" />
     <MESSAGE value="Worked on adding data points to graph (sorted)" />
     <MESSAGE value="Test to see if I can add the csv files to github" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test to see if I can add the csv files to github" />
+    <MESSAGE value="Test for Files (again)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test for Files (again)" />
   </component>
 </project>

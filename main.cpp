@@ -43,6 +43,8 @@ int main(){
 
     // Create input stream object, read in values and add to map accordingly
     ifstream inFS;
+
+    // Open input filestream for map
     inFS.open(file);
 
     int upperBound = ceil(stockVal + (stockVal / 200));
@@ -72,6 +74,7 @@ int main(){
 
     }
 
+    // Close input filestream for map
     inFS.close();
 
     // Loop through days in "At" and find day either in "Down", "At", or "Up" that is exactly timeframe away from day in "At"
@@ -159,7 +162,8 @@ int main(){
     cout << "The map approach finished in " << mapTime << " seconds." << endl;
 
 
-
+    // Start timer for graph setup
+    startTime = clock();
     // Graph (Adjacency List) setup
     /*
      * Read in data values and when current price is reached, store the value that is timeframe away from it in an
@@ -171,11 +175,10 @@ int main(){
     // Create graph to store data
     unordered_map<int, vector<pair<int, int>>> myGraph;
 
-    // Create queue to store how many days away we are from the next day that is timeframe away from a day that had
-    // current stock price
+    // Create queue to which days are timeframe away from a day that we saw the input stock price
     queue<int> q;
 
-    // Open file
+    // Open input filestream for graph
     inFS.open(file);
 
     day = 0;
@@ -196,7 +199,7 @@ int main(){
         val = stoi(token);
 
         // Add this value to the graph as it is timeframe away from a day we were at the input stock price
-        if (!q.empty() && q.front() == 0) {
+        if (!q.empty() && q.front() == day) {
             q.pop();
             // Calculate percent change and then how many ranges away it is from input stock price
             percentChange = (static_cast<double>(val - stockVal) / stockVal) * 100;
@@ -218,12 +221,45 @@ int main(){
 
         }
 
-
+        // If read in value is equal to input value, add projected day (that is timeframe away) to q
+        if (val == stockVal) {q.emplace(day);}
 
     }
 
+    // Close input filestream for graph
+    inFS.close();
+
+    // TODO: DECIDE ON HOW WE WANT TO REPRESENT PRICE MOVEMENT FOR GRAPH
+    // Calculate price movement and confidence
+
+    // End clock and save time elapsed for graph process
+    endTime = clock();
+    timeElapsed = endTime - startTime;
+    auto graphTime = static_cast<float>(timeElapsed)/CLOCKS_PER_SEC;
+
+    // Display price movement, confidence, and elapsed time for graph setup
 
 
+
+
+
+
+    // Compare map runtime to graph runtime and display results with respect to the graph time
+    float runTimePercentChange = (graphTime - mapTime) / graphTime;
+
+    if (runTimePercentChange < 0.01 && runTimePercentChange > -0.01){
+
+        cout << "Using either a map or graph resulted in approximately the same runtime." << endl;
+
+    } else {
+        if (runTimePercentChange >= 0.01) {
+            changeString = "faster.";
+        } else if (runTimePercentChange <= -0.01) {
+            changeString = "slower.";
+        }
+        cout << "Using a map instead of a graph allowed the program to run " << abs(runTimePercentChange) << "% ";
+        cout << changeString << endl;
+    }
 
     return 0;
 }
