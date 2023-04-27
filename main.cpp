@@ -204,16 +204,29 @@ int main(){
             // Calculate percent change and then how many ranges away it is from input stock price
             percentChange = (static_cast<double>(val - stockVal) / stockVal) * 100;
             range = ceil(((percentChange / 0.25) - 1) / 2);
+            // Update adjacency list by either adding 1 to the weight of an existing range or adding a new range
             if (myGraph[stockVal].empty()) {
                 myGraph[stockVal].emplace_back(range, 1);
             } else {
-                for (auto it = myGraph[stockVal].begin(); it != myGraph[stockVal].end(); it++) {
-                    if (range == it->first) {
-                        it->second++;
-                        break;
-                    } else if (range < it->first && (it == myGraph[stockVal].begin() || range > (it-1)->first)) {
-                        myGraph[stockVal].emplace(it, range, 1);
-                    } else if (it+1 == myGraph[stockVal].end()) {
+                // Find range if it exists and update its weight
+                for (int i = 0; i < myGraph[stockVal].size(); i++) {
+                    if (myGraph[stockVal][i].first == range) {
+                        myGraph[stockVal][i].second++;
+                        int j = i;
+                        // Sort ranges by weights
+                        while (j > 0 && myGraph[stockVal][j].second > myGraph[stockVal][j-1].second) {
+                            pair<int, int> temp = myGraph[stockVal][j-1];
+                            myGraph[stockVal][j-1] = myGraph[stockVal][j];
+                            myGraph[stockVal][j] = temp;
+                        }
+                        // If first two weights are equal, prioritize ranges closer to zero, leave in place if ranges are equally away
+                        if (myGraph[stockVal][0].second == myGraph[stockVal][1].second && abs(myGraph[stockVal][1].first) < abs(myGraph[stockVal][0].first)) {
+                            pair<int, int> temp = myGraph[stockVal][0];
+                            myGraph[stockVal][0] = myGraph[stockVal][1];
+                            myGraph[stockVal][1] = temp;
+                        }
+                        // If range is not found, add at the end
+                    } else if (i+1 == myGraph[stockVal].size()) {
                         myGraph[stockVal].emplace_back(range, 1);
                     }
                 }

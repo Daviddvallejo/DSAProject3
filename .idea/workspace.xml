@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Test for Files (again)">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Simplified logic for searching for days that are timeframe away from a day the input stock price was seen&#10;Added clock time for graph setup&#10;Compared map and graph runtime and displayed results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682618468586</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Simplified logic for searching for days that are timeframe away from a day the input stock price was seen&#10;Added clock time for graph setup&#10;Compared map and graph runtime and displayed results">
+      <created>1682621338544</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682621338544</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +217,7 @@
     <MESSAGE value="Worked on adding data points to graph (sorted)" />
     <MESSAGE value="Test to see if I can add the csv files to github" />
     <MESSAGE value="Test for Files (again)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test for Files (again)" />
+    <MESSAGE value="Simplified logic for searching for days that are timeframe away from a day the input stock price was seen&#10;Added clock time for graph setup&#10;Compared map and graph runtime and displayed results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified logic for searching for days that are timeframe away from a day the input stock price was seen&#10;Added clock time for graph setup&#10;Compared map and graph runtime and displayed results" />
   </component>
 </project>
