@@ -244,6 +244,7 @@ int main(){
     inFS.close();
 
     // Calculate price movement and confidence
+    //Test
     int maxWeight, equalWeightCount = 0;
     double avgPercentChange = 0.0;
     auto maxPair = myGraph[stockVal].begin();
