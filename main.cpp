@@ -47,9 +47,11 @@ int main(){
     // Open input filestream for map
     inFS.open(file);
 
-    int upperBound = ceil(stockVal + (stockVal / 200));
-    int lowerBound = ceil(stockVal - (stockVal / 200));
-    int day, val;
+    // Bounds are +/- 0.25%
+    int upperBound = ceil(stockVal + (stockVal / 400));
+    int lowerBound = ceil(stockVal - (stockVal / 400));
+    int day;
+    double val;
     string token;
     while (inFS) {
         inFS.clear();
@@ -61,15 +63,18 @@ int main(){
         getline(inFS, token);
         val = stoi(token);
 
+        // Normalize values into intervals of 0.5%, going out from the input stock value
+        double percentChange = ((val - stockVal) / stockVal) * 100;
+        int range = ceil(((percentChange / 0.25) - 1) / 2);
 
 
         // Insert values into map
         if (val < lowerBound) {
-            myMap["Down"].emplace_back(day, val);
+            myMap["Down"].emplace_back(day,range);
         } else if (val > upperBound) {
-            myMap["Up"].emplace_back(day, val);
+            myMap["Up"].emplace_back(day,range);
         } else {
-            myMap["At"].emplace_back(day, val);
+            myMap["At"].emplace_back(day, range);
         }
 
     }
@@ -78,10 +83,11 @@ int main(){
     inFS.close();
 
     // Loop through days in "At" and find day either in "Down", "At", or "Up" that is exactly timeframe away from day in "At"
-    // If/when a match is found, update average price.
+    // If/when a match is found, update counter in price map
     // Keep track of num times price went up, down, or stayed the same and also number of times a day timeframe away was looked for.
 
-    double totalSum = 0;
+
+    unordered_map<int, int> priceMap;
     int matchedDays = 0;
     for (auto i : myMap["At"]) {
 
@@ -94,7 +100,7 @@ int main(){
         while (left <= right) {
             mid = left + ((right - left) / 2);
             if (myMap["Down"][mid].first == targetDay) {
-                totalSum += myMap["Down"][mid].second;
+                priceMap[myMap["Down"][mid].second]++;
                 matchedDays++;
                 break;
             } else if (myMap["Down"][mid].first < targetDay) {
@@ -110,7 +116,7 @@ int main(){
         while (left <= right) {
             mid = left + ((right - left) / 2);
             if (myMap["At"][mid].first == targetDay) {
-                totalSum += myMap["At"][mid].second;
+                priceMap[myMap["At"][mid].second]++;
                 matchedDays++;
                 break;
             } else if (myMap["At"][mid].first < targetDay) {
@@ -126,7 +132,7 @@ int main(){
         while (left <= right) {
             mid = left + ((right - left) / 2);
             if (myMap["Up"][mid].first == targetDay) {
-                totalSum += myMap["Up"][mid].second;
+                priceMap[myMap["Up"][mid].second]++;
                 matchedDays++;
                 break;
             } else if (myMap["Up"][mid].first < targetDay) {
@@ -137,10 +143,14 @@ int main(){
         }
     }
 
-    // Calculate average for price of stock after timeframe for every instance the stock was at the current price and
+    // Calculate weighted average for price of stock after timeframe for every instance the stock was at the current price and
     // the percent change
-    double avgPrice = totalSum / matchedDays;
-    double percentChange = ((avgPrice - stockVal) / stockVal) * 100;
+    double avgRange = 0;
+    for (auto x : priceMap) {
+        avgRange += static_cast<double>(x.first * x.second) / matchedDays;
+    }
+
+    double percentChange = avgRange / 2;
 
     // FIXME: WRITE FORMULA FOR PERCENT CONFIDENCE
     double confidence = 0;
@@ -265,12 +275,6 @@ int main(){
     auto graphTime = static_cast<float>(timeElapsed)/CLOCKS_PER_SEC;
 
     // Display price movement, confidence, and elapsed time for graph setup
-
-
-
-
-
-
     // Compare map runtime to graph runtime and display results with respect to the graph time
     float runTimePercentChange = (graphTime - mapTime) / graphTime;
 
