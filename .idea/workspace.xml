@@ -20,7 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Wrote formula for calculating map confidence">
+    <list default="true" id="d0966ead-16a4-4e92-b322-07483a2abb49" name="Changes" comment="Comment edits">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/400.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +88,7 @@
       <updated>1682456433938</updated>
       <workItem from="1682456435360" duration="391000" />
       <workItem from="1682621268861" duration="3507000" />
+      <workItem from="1682647071375" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Starting point">
       <created>1682456505191</created>
@@ -178,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682634809398</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Comment edits">
+      <created>1682635052697</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682635052697</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +226,7 @@
     <MESSAGE value="Prevented duplicates from being added into the graph in the graph approach" />
     <MESSAGE value="Fixed bug for weights in graph" />
     <MESSAGE value="Wrote formula for calculating map confidence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote formula for calculating map confidence" />
+    <MESSAGE value="Comment edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comment edits" />
   </component>
 </project>

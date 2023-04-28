@@ -19,7 +19,9 @@ int main(){
     int timeFrame = stoi(input.substr(input.find(' '), string::npos));
 
     // File to use
-    string file = "100.csv";
+    // string file = "100.csv";
+    // string file = "250.csv";
+    string file = "400.csv";
 
 
     // Start clock to time map approach
